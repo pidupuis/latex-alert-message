@@ -7,7 +7,7 @@
 
 %% Informations générales
 \NeedsTeXFormat{LaTeX2e}[1999/01/01]
-\ProvidesPackage{sourcecode}[2013]
+\ProvidesPackage{latex-message-panel}[2013]
 
 %% Chargement des extensions
 \RequirePackage{picture}
@@ -22,20 +22,20 @@
 \ProcessOptions
 
 % MESSAGE PANE
+\newlength{\myl} %
 \newcommand*\messagePane[3]{% 
 	\begin{center} % Centre le panel
 		\noindent % Retire l'indentation
 		\begin{tikzpicture} % Bloc definissant le panel
-			\node[draw=#1!80,fill=#1!20, rounded corners=5pt, inner sep=4mm]{ % On definit la boite avec les couleurs, les coins arrondis et les marges interieures
+			\node[draw=#1!80, fill=#1!20, rounded corners=5pt, inner sep=11pt]{ % On definit la boite avec les couleurs, les coins arrondis et les marges interieures
 				\begin{array}{l} % On cree un tableau d'une case
 					\includegraphics[scale=0.5]{{#2}} % On affiche l'icone correspondant au message
 				\end{array} %
-				\newlength{\myl} %
 				\settowidth{\myl}{{#3}} % On recupere la taille du texte
 				\ifthenelse{\lengthtest{\myl > 400pt}}{ % Si le texte depasse les 400pt
-					\parbox{12cm}{{#3}} % On prend une boite gerant les paragraphes et on lui limite la taille a 10cm
+					\parbox{340pt}{{#3}} % On prend une boite gerant les paragraphes et on lui limite la taille a 10cm
 				}{ % Sinon
-					\makebox{\textwidth}{{#3}} % On prend une boite s'adaptant a la taille du texte
+					\makebox{\textwidth pt}{{#3}} % On prend une boite s'adaptant a la taille du texte
 				}%
 			};%
 		\end{tikzpicture}%
@@ -45,22 +45,22 @@
 
 % ERROR PANE
 \newcommand*\errorPane[1]{% Panel specifique pour afficher une erreur
-	\messagePane{red}{img/error.png}{{#1}} % Herite du message pane
+	\messagePane{red}{img/error.png}{#1} % Herite du message pane
 }%
 
 % WARNING PANE
 \newcommand*\warningPane[1]{% Panel specifique pour afficher un warning
-	\messagePane{orange}{img/warning.png}{{#1}} % Herite du message pane
+	\messagePane{orange}{img/warning.png}{#1} % Herite du message pane
 }%
 
 % SUCCESS PANE
 \newcommand*\successPane[1]{% Panel specifique pour afficher un succes
-	\messagePane{green}{img/success.png}{{#1}} % Herite du message pane	
+	\messagePane{green}{img/success.png}{#1} % Herite du message pane	
 }%
 
 % INFO PANE
 \newcommand*\infoPane[1]{% Panel specifique pour afficher une information
-	\messagePane{blue}{img/info.png}{{#1}} % Herite du message pane
+	\messagePane{blue}{img/info.png}{#1} % Herite du message pane
 }%
 
 %% Fin du package
