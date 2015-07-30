@@ -5,16 +5,22 @@ Message panels for LaTeX - Inspired by [Bootstrap alerts](http://www.w3schools.c
 
 ## Installation
 
-Download the [package file](https://raw.githubusercontent.com/pidupuis/latex-message-panel/master/latex-message-panel.sty). You can install properly as usual or simply keep it at the root of your LaTeX project.
+Download the [package file](https://raw.githubusercontent.com/pidupuis/latex-message-panel/master/latex-message-panel.sty) as following:
 
-Include it in the header of your TeX file as following:
+```bash
+wget https://raw.githubusercontent.com/pidupuis/latex-message-panel/master/latex-message-panel.sty
+```
+
+You can install it properly or simply keep it at the root of your LaTeX project. Download the [latest release](https://github.com/pidupuis/latex-message-panel/releases/tag/v1.0) as a full example project or look at the [example.tex](https://github.com/pidupuis/latex-message-panel/blob/master/example.tex).
+
+## Documentation
+
+Include the package in the header of your TeX file:
 ```tex
 \usepackage{latex-message-panel}
 ```
 
-## Documentation
-
-There are four panels availables for `information`, `warnings`, `errors` or `success` messages. 
+And simply call the methods you need. There are four panels availables for `information`, `warnings`, `errors` or `success` messages. 
 
 ```tex
 \infoPane{Lorem ipsum dolor sit amet.}
