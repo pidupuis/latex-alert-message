@@ -1,2 +1,2 @@
 # latex-message-panel
-Message panel for latex, inspired by Bootstrap CSS framework 
+Message panels for LaTeX - Inspired by [Bootstrap alerts](http://www.w3schools.com/bootstrap/bootstrap_alerts.asp)
