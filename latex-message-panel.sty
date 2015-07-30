@@ -1,5 +1,5 @@
 %% 
-%% Created by Pierre DUPUIS - 2013
+%% Created by Pierre DUPUIS - 2013-2015
 %% Package which provides some practical message pane.
 %% The user can display a successful message, an error message, a warning message or an information message.
 %%
@@ -7,7 +7,7 @@
 
 %% Informations générales
 \NeedsTeXFormat{LaTeX2e}[1999/01/01]
-\ProvidesPackage{latex-message-panel}[2013]
+\ProvidesPackage{latex-message-panel}[2015]
 
 %% Chargement des extensions
 \RequirePackage{picture}
@@ -28,14 +28,14 @@
 		\noindent % Retire l'indentation
 		\begin{tikzpicture} % Bloc definissant le panel
 			\node[draw=#1!80, fill=#1!20, rounded corners=5pt, inner sep=11pt]{ % On definit la boite avec les couleurs, les coins arrondis et les marges interieures
-				\begin{array}{l} % On cree un tableau d'une case
+				$\begin{array}{l} % On cree un tableau d'une case
 					\includegraphics[scale=0.5]{{#2}} % On affiche l'icone correspondant au message
-				\end{array} %
+				\end{array}$ %
 				\settowidth{\myl}{{#3}} % On recupere la taille du texte
 				\ifthenelse{\lengthtest{\myl > 400pt}}{ % Si le texte depasse les 400pt
 					\parbox{340pt}{{#3}} % On prend une boite gerant les paragraphes et on lui limite la taille a 10cm
 				}{ % Sinon
-					\makebox{\textwidth pt}{{#3}} % On prend une boite s'adaptant a la taille du texte
+					\makebox{}{{#3}} % On prend une boite s'adaptant a la taille du texte
 				}%
 			};%
 		\end{tikzpicture}%
