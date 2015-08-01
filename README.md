@@ -8,12 +8,8 @@ Message panels for LaTeX - Inspired by [Bootstrap alerts](http://www.w3schools.c
 Download the [package file](https://raw.githubusercontent.com/pidupuis/latex-message-panel/master/latex-message-panel.sty) and the [images](https://github.com/pidupuis/latex-message-panel/tree/master/img) as following:
 
 ```bash
-wget https://raw.githubusercontent.com/pidupuis/latex-message-panel/master/latex-message-panel.sty
-mkdir img && cd img/
-wget https://raw.githubusercontent.com/pidupuis/latex-message-panel/master/img/error.png
-wget https://raw.githubusercontent.com/pidupuis/latex-message-panel/master/img/info.png
-wget https://raw.githubusercontent.com/pidupuis/latex-message-panel/master/img/success.png
-wget https://raw.githubusercontent.com/pidupuis/latex-message-panel/master/img/warning.png
+wget https://github.com/pidupuis/latex-message-panel/blob/master/latex-message-panel.zip?raw=true
+unzip latex-message-panel.zip
 ```
 
 You need to place them at the root of your LaTeX project. Download the [latest release](https://github.com/pidupuis/latex-message-panel/releases/tag/v1.0) as a full example project or look at the [example.tex](https://github.com/pidupuis/latex-message-panel/blob/master/example.tex).
