@@ -1,4 +1,4 @@
-%% latex-message-panel.sty
+%% alertmessage.sty
 %% Copyright 2015 M. Pierre Dupuis
 %
 % This work may be distributed and/or modified under the
@@ -13,8 +13,8 @@
 % 
 % The Current Maintainer of this work is M. Pierre Dupuis
 %
-% This work consists of the files latex-message-panel.dtx and latex-message-panel.ins
-% and the derived file latex-message-panel.sty.
+% This work consists of the files alertmessage.dtx and alertmessage.ins
+% and the derived file alertmessage.sty.
 
 
 %% Description
@@ -23,7 +23,7 @@
 
 %% Informations générales
 \NeedsTeXFormat{LaTeX2e}[1999/01/01]
-\ProvidesPackage{latex-message-panel}[2015]
+\ProvidesPackage{alertmessage}[2015]
 
 %% Chargement des extensions
 \RequirePackage{picture}
@@ -38,8 +38,8 @@
 \ProcessOptions
 
 % MESSAGE PANE
-\newlength{\myl} %
-\newcommand*\messagePane[3]{% 
+\newlength{\alertmessage@textlength} %
+\newcommand*\alertmessage@panel[3]{% 
 	\begin{center} % Centre le panel
 		\noindent % Retire l'indentation
 		\begin{tikzpicture} % Bloc definissant le panel
@@ -47,8 +47,8 @@
 				$\begin{array}{l} % On cree un tableau d'une case
 					\includegraphics[scale=0.5]{{#2}} % On affiche l'icone correspondant au message
 				\end{array}$ %
-				\settowidth{\myl}{{#3}} % On recupere la taille du texte
-				\ifthenelse{\lengthtest{\myl > 400pt}}{ % Si le texte depasse les 400pt
+				\settowidth{\alertmessage@textlength}{{#3}} % On recupere la taille du texte
+				\ifthenelse{\lengthtest{\alertmessage@textlength > 400pt}}{ % Si le texte depasse les 400pt
 					\parbox{340pt}{{#3}} % On prend une boite gerant les paragraphes et on lui limite la taille a 10cm
 				}{ % Sinon
 					\makebox{}{{#3}} % On prend une boite s'adaptant a la taille du texte
@@ -60,23 +60,23 @@
 }%
 
 % ERROR PANE
-\newcommand*\errorPane[1]{% Panel specifique pour afficher une erreur
-	\messagePane{red}{img/error.png}{#1} % Herite du message pane
+\newcommand*\alerterror[1]{% Panel specifique pour afficher une erreur
+	\alertmessage@panel{red}{img/error.png}{#1} % Herite du message pane
 }%
 
 % WARNING PANE
-\newcommand*\warningPane[1]{% Panel specifique pour afficher un warning
-	\messagePane{orange}{img/warning.png}{#1} % Herite du message pane
+\newcommand*\alertwarning[1]{% Panel specifique pour afficher un warning
+	\alertmessage@panel{orange}{img/warning.png}{#1} % Herite du message pane
 }%
 
 % SUCCESS PANE
-\newcommand*\successPane[1]{% Panel specifique pour afficher un succes
-	\messagePane{green}{img/success.png}{#1} % Herite du message pane	
+\newcommand*\alertsuccess[1]{% Panel specifique pour afficher un succes
+	\alertmessage@panel{green}{img/success.png}{#1} % Herite du message pane	
 }%
 
 % INFO PANE
-\newcommand*\infoPane[1]{% Panel specifique pour afficher une information
-	\messagePane{blue}{img/info.png}{#1} % Herite du message pane
+\newcommand*\alertinfo[1]{% Panel specifique pour afficher une information
+	\alertmessage@panel{blue}{img/info.png}{#1} % Herite du message pane
 }%
 
 %% Fin du package
