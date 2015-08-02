@@ -1,0 +1,111 @@
+% \iffalse meta-comment
+%
+% alertmessage.dtx
+% Copyright (C) 2015 by Pierre Dupuis
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is M. Pierre Dupuis
+%
+% This work consists of the files alertmessage.dtx and alertmessage.ins
+% and the derived file alertmessage.sty.
+%
+% \fi
+
+% \iffalse
+%<package>\NeedsTeXFormat{LaTeX2e}[2003/12/01]
+%<package>\ProvidesPackage{alertmessage}
+%<package>   [2005/08/02 v1.0 Alert messages]
+%<*package>
+%% Required packages
+\RequirePackage{picture}%
+\RequirePackage{xcolor}%
+\RequirePackage{ifthen}%
+\RequirePackage{calc}%
+\RequirePackage{graphicx}%
+\RequirePackage{tikz}%
+
+%% Options
+\DeclareOption*{}%
+\ProcessOptions%
+
+% ALERT PANEL
+\newlength{\alertmessage@textlength}%
+\newcommand*\alertmessage@panel[3]{%
+	\begin{center} %
+		\noindent % No indentation
+		\begin{tikzpicture} %
+			\node[draw=#1!80, fill=#1!20, rounded corners=5pt, inner sep=11pt]{ % Add a little bit of transparency
+				$\begin{array}{l} % One-cell table
+					\includegraphics[scale=0.5]{{#2}} % Alert icon
+				\end{array}$ %
+				\settowidth{\alertmessage@textlength}{{#3}} %
+				\ifthenelse{\lengthtest{\alertmessage@textlength > 400pt}}{ % If text is more than 400pt
+					\parbox{340pt}{{#3}} % Box which handles paragraphs, limited to 10cm
+				}{ % Else
+					\makebox{}{{#3}} % Box which adapts itself to the text length
+				} %
+			}; %
+		\end{tikzpicture} %
+	\end{center} %
+	\par % Get back the indentation
+}%
+
+% ERROR ALERT
+\newcommand*\alerterror[1]{%
+	\alertmessage@panel{red}{img/error.png}{#1}%
+}%
+
+% ERROR WARNING
+\newcommand*\alertwarning[1]{%
+	\alertmessage@panel{orange}{img/warning.png}{#1}%
+}%
+
+% ERROR SUCCESS
+\newcommand*\alertsuccess[1]{%
+	\alertmessage@panel{green}{img/success.png}{#1}%	
+}%
+
+% ERROR INFO
+\newcommand*\alertinfo[1]{%
+	\alertmessage@panel{blue}{img/info.png}{#1}%
+}%
+
+%</package>
+
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage{alertmessage}
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+\DocInput{alertmessage.dtx}
+\end{document}
+%</driver>
+% \fi
+
+% \title{L’extension \textsf{alertmessage}\thanks{Ce document
+%   correspond à la version~\fileversion de \textsf{alertmessage},
+%   datée du~\filedate.}}
+% \author{Pierre Dupuis}
+%
+% \maketitle
+% \section{Introduction}
+%
+%
+% \section{Usage}
+%
+%
+% \DescribeMacro{\alerterror}
+% \alerterror{Lorem ipsum dolor sit amet, consectetuer adipiscing elit.}
+% 
+

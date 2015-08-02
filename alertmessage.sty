@@ -1,84 +1,81 @@
-%% alertmessage.sty
-%% Copyright 2015 by M. Pierre Dupuis
-%
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License, either version 1.3
-% of this license or (at your option) any later version.
-% The latest version of this license is in
-%   http://www.latex-project.org/lppl.txt
-% and version 1.3 or later is part of all distributions of LaTeX
-% version 2005/12/01 or later.
-%
-% This work has the LPPL maintenance status `maintained'.
-% 
-% The Current Maintainer of this work is M. Pierre Dupuis
-%
-% This work consists of the files alertmessage.dtx and alertmessage.ins
-% and the derived file alertmessage.sty.
+%%
+%% This is file `alertmessage.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% alertmessage.dtx  (with options: `package')
+%% 
+%% This is a generated file.
+%% 
+%% Copyright (C) 2015 by Pierre Dupuis
+%% 
+%% This file may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License, either version 1.3c of this license
+%% or (at your option) any later version. The latest version of this
+%% license is in:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2006/05/20 or later.
+%% 
 
+\NeedsTeXFormat{LaTeX2e}[2003/12/01]
+\ProvidesPackage{alertmessage}
+   [2005/08/02 v1.0 Alert messages]
+%% Required packages
+\RequirePackage{picture}%
+\RequirePackage{xcolor}%
+\RequirePackage{ifthen}%
+\RequirePackage{calc}%
+\RequirePackage{graphicx}%
+\RequirePackage{tikz}%
 
-%% Description
-% Package which provides some practical message pane.
-% The user can display a successful message, an error message, a warning message or an information message.
+%% Options
+\DeclareOption*{}%
+\ProcessOptions%
 
-%% Informations générales
-\NeedsTeXFormat{LaTeX2e}[1999/01/01]
-\ProvidesPackage{alertmessage}[2015]
-
-%% Chargement des extensions
-\RequirePackage{picture}
-\RequirePackage{xcolor}
-\RequirePackage{ifthen}
-\RequirePackage{calc}
-\RequirePackage{graphicx}
-\RequirePackage{tikz}
-
-%% Déclaration des options
-\DeclareOption*{}%% Ne rien faire quand une option est inconnue
-\ProcessOptions
-
-% MESSAGE PANE
-\newlength{\alertmessage@textlength} %
-\newcommand*\alertmessage@panel[3]{% 
-	\begin{center} % Centre le panel
-		\noindent % Retire l'indentation
-		\begin{tikzpicture} % Bloc definissant le panel
-			\node[draw=#1!80, fill=#1!20, rounded corners=5pt, inner sep=11pt]{ % On definit la boite avec les couleurs, les coins arrondis et les marges interieures
-				$\begin{array}{l} % On cree un tableau d'une case
-					\includegraphics[scale=0.5]{{#2}} % On affiche l'icone correspondant au message
-				\end{array}$ %
-				\settowidth{\alertmessage@textlength}{{#3}} % On recupere la taille du texte
-				\ifthenelse{\lengthtest{\alertmessage@textlength > 400pt}}{ % Si le texte depasse les 400pt
-					\parbox{340pt}{{#3}} % On prend une boite gerant les paragraphes et on lui limite la taille a 10cm
-				}{ % Sinon
-					\makebox{}{{#3}} % On prend une boite s'adaptant a la taille du texte
-				}%
-			};%
-		\end{tikzpicture}%
-	\end{center}%
-	\par% On clot le paragraphe pour retrouver l'indentation du prochain paragraphe
+\newlength{\alertmessage@textlength}%
+\newcommand*\alertmessage@panel[3]{%
+\begin{center} %
+\noindent % No indentation
+\begin{tikzpicture} %
+\node[draw=#1!80, fill=#1!20, rounded corners=5pt, inner sep=11pt]{ % Add a little bit of transparency
+$\begin{array}{l} % One-cell table
+\includegraphics[scale=0.5]{{#2}} % Alert icon
+\end{array}$ %
+\settowidth{\alertmessage@textlength}{{#3}} %
+\ifthenelse{\lengthtest{\alertmessage@textlength > 400pt}}{ % If text is more than 400pt
+\parbox{340pt}{{#3}} % Box which handles paragraphs, limited to 10cm
+}{ % Else
+\makebox{}{{#3}} % Box which adapts itself to the text length
+} %
+}; %
+\end{tikzpicture} %
+\end{center} %
+\par % Get back the indentation
 }%
 
-% ERROR PANE
-\newcommand*\alerterror[1]{% Panel specifique pour afficher une erreur
-	\alertmessage@panel{red}{img/error.png}{#1} % Herite du message pane
+\newcommand*\alerterror[1]{%
+\alertmessage@panel{red}{img/error.png}{#1}%
 }%
 
-% WARNING PANE
-\newcommand*\alertwarning[1]{% Panel specifique pour afficher un warning
-	\alertmessage@panel{orange}{img/warning.png}{#1} % Herite du message pane
+\newcommand*\alertwarning[1]{%
+\alertmessage@panel{orange}{img/warning.png}{#1}%
 }%
 
-% SUCCESS PANE
-\newcommand*\alertsuccess[1]{% Panel specifique pour afficher un succes
-	\alertmessage@panel{green}{img/success.png}{#1} % Herite du message pane	
+\newcommand*\alertsuccess[1]{%
+\alertmessage@panel{green}{img/success.png}{#1}%
 }%
 
-% INFO PANE
-\newcommand*\alertinfo[1]{% Panel specifique pour afficher une information
-	\alertmessage@panel{blue}{img/info.png}{#1} % Herite du message pane
+\newcommand*\alertinfo[1]{%
+\alertmessage@panel{blue}{img/info.png}{#1}%
 }%
 
-%% Fin du package
+
+
+
 \endinput
-
+%%
+%% End of file `alertmessage.sty'.
