@@ -6,6 +6,7 @@ mkdir alertmessage.tds && cd alertmessage.tds
 
 mkdir -p doc/latex/alertmessage
 cp ../alertmessage.pdf ./doc/latex/alertmessage/
+cp ../README.md ./doc/latex/alertmessage/
 
 mkdir -p source/latex/alertmessage
 cp ../alertmessage.dtx ./source/latex/alertmessage/
