@@ -2,18 +2,16 @@
 Alert messages for LaTeX - Inspired by [Bootstrap alerts](http://www.w3schools.com/bootstrap/bootstrap_alerts.asp)
 
 
-![Example rendering](https://github.com/pidupuis/latex-alert-message/blob/master/panels.png)
+[![ - Example rendering](https://raw.githubusercontent.com/pidupuis/latex-alert-message/master/panels.png)](https://raw.githubusercontent.com/pidupuis/latex-alert-message/master/panels.png)
 
 ## Installation
 
 #### Clean installation
 
-To install the package properly, download the [TDS archive](https://github.com/pidupuis/latex-alert-message/blob/master/alertmessage.tds.zip?raw=true).
+To install the package properly, download the [TDS archive](https://github.com/pidupuis/latex-alert-message/blob/master/alertmessage.tds.zip?raw=true). Then extract the archive into the texmf folder and install the package as following:
 
 ```bash
-# Extract the archive into the texmf folder
 sudo unzip alertmessage.tds.zip -d "$(kpsewhich -var-value TEXMFLOCAL)"
-# Then update the package list
 sudo texhash
 ```
 
