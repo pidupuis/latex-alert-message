@@ -5,9 +5,9 @@ Alert messages for LaTeX - Inspired by [Bootstrap alerts](http://www.w3schools.c
 
 ## Installation
 
-### Clean installation
+#### Clean installation
 
-To install the package properly, download the TDS archive.
+To install the package properly, download the [TDS archive](https://github.com/pidupuis/latex-alert-message/blob/master/alertmessage.tds.zip?raw=true).
 
 ```bash
 # Extract the archive into the texmf folder
@@ -18,7 +18,7 @@ sudo texhash
 
 The package will be available from anywhere on your computer.
 
-### Use the package without installation
+#### Use the package without installation
 
 You can use the package without installation by putting the [package file](https://raw.githubusercontent.com/pidupuis/latex-alert-message/master/alertmessage.sty) and the [images](https://github.com/pidupuis/latex-alert-message/tree/master/img) in the root directory of your LaTeX project.
 
