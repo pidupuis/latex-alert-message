@@ -1,5 +1,6 @@
-# latex-alert-message
+# latex-alert-message - available on [CTAN](http://www.ctan.org/pkg/alertmessage)
 Alert messages for LaTeX - Inspired by [Bootstrap alerts](http://www.w3schools.com/bootstrap/bootstrap_alerts.asp)
+
 
 ![Example rendering](https://github.com/pidupuis/latex-alert-message/blob/master/panels.png)
 
