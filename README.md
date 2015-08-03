@@ -5,14 +5,22 @@ Alert messages for LaTeX - Inspired by [Bootstrap alerts](http://www.w3schools.c
 
 ## Installation
 
-Download the [package file](https://raw.githubusercontent.com/pidupuis/latex-alert-message/master/alertmessage.sty) and the [images](https://github.com/pidupuis/latex-alert-message/tree/master/img) as following:
+### Clean installation
+
+To install the package properly, download the TDS archive.
 
 ```bash
-wget https://github.com/pidupuis/latex-alert-message/blob/master/alertmessage.zip?raw=true
-unzip alertmessage.zip
+sudo unzip alertmessage.tds.zip -d "$(kpsewhich -var-value TEXMFLOCAL)" # Extract the archive into the texmf folder
+sudo texhash # Then update the package list
 ```
 
-You need to place them at the root of your LaTeX project. Download the [latest release](https://github.com/pidupuis/latex-alert-message/releases/tag/v1.0) as a full example project or look at the [example.tex](https://github.com/pidupuis/latex-alert-message/blob/master/example.tex).
+The package will be available from anywhere on your computer.
+
+### Use the package without installation
+
+You can use the package without installation by putting the [package file](https://raw.githubusercontent.com/pidupuis/latex-alert-message/master/alertmessage.sty) and the [images](https://github.com/pidupuis/latex-alert-message/tree/master/img) in the root directory of your LaTeX project.
+
+Download the [latest release](https://github.com/pidupuis/latex-alert-message/releases/tag/v1.0) as a full example project or look at the [example.tex](https://github.com/pidupuis/latex-alert-message/blob/master/example.tex).
 
 ## Documentation
 
@@ -31,3 +39,15 @@ And simply call the methods you need. There are four panels availables for `info
 ```
 
 The panel will adapt its size according to the length of the text (as you can see in the example).
+
+## Contributing
+
+Feel free to open [issues](https://github.com/pidupuis/latex-alert-message/issues) or create [pull requests](https://github.com/pidupuis/latex-alert-message/pulls).
+
+If you want to modify the package for personal use, you can manually edit the [package file](https://raw.githubusercontent.com/pidupuis/latex-alert-message/master/alertmessage.sty).
+
+If you want to create a TDS archive to share your modifications with your friends, use the [TDS generation script](https://raw.githubusercontent.com/pidupuis/latex-alert-message/master/generate_tds.sh).
+
+If you want to deploy your modifications on the CTAN by yourself, please take a different package name.
+
+
