@@ -10,8 +10,10 @@ Alert messages for LaTeX - Inspired by [Bootstrap alerts](http://www.w3schools.c
 To install the package properly, download the TDS archive.
 
 ```bash
-sudo unzip alertmessage.tds.zip -d "$(kpsewhich -var-value TEXMFLOCAL)" # Extract the archive into the texmf folder
-sudo texhash # Then update the package list
+# Extract the archive into the texmf folder
+sudo unzip alertmessage.tds.zip -d "$(kpsewhich -var-value TEXMFLOCAL)"
+# Then update the package list
+sudo texhash
 ```
 
 The package will be available from anywhere on your computer.
@@ -44,9 +46,9 @@ The panel will adapt its size according to the length of the text (as you can se
 
 Feel free to open [issues](https://github.com/pidupuis/latex-alert-message/issues) or create [pull requests](https://github.com/pidupuis/latex-alert-message/pulls).
 
-If you want to modify the package for personal use, you can manually edit the [package file](https://raw.githubusercontent.com/pidupuis/latex-alert-message/master/alertmessage.sty).
+If you want to modify the package for personal use, you can manually edit the [package file](https://github.com/pidupuis/latex-alert-message/blob/master/alertmessage.sty).
 
-If you want to create a TDS archive to share your modifications with your friends, use the [TDS generation script](https://raw.githubusercontent.com/pidupuis/latex-alert-message/master/generate_tds.sh).
+If you want to create a TDS archive to share your modifications with your friends, use the [TDS generation script](https://github.com/pidupuis/latex-alert-message/blob/master/generate_tds.sh).
 
 If you want to deploy your modifications on the CTAN by yourself, please take a different package name.
 
