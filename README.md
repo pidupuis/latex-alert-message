@@ -21,7 +21,7 @@ The package will be available from anywhere on your computer.
 
 You can use the package without installation by putting the [package file](https://raw.githubusercontent.com/pidupuis/latex-alert-message/master/alertmessage.sty) and the [images](https://github.com/pidupuis/latex-alert-message/tree/master/img) in the root directory of your LaTeX project.
 
-Download the [latest release](https://github.com/pidupuis/latex-alert-message/releases/tag/v1.0) as a full example project or look at the [example.tex](https://github.com/pidupuis/latex-alert-message/blob/master/example.tex).
+Download the [latest release](https://github.com/pidupuis/latex-alert-message/releases/latest) as a full example project or look at the [example.tex](https://github.com/pidupuis/latex-alert-message/blob/master/example.tex).
 
 ## Documentation
 
