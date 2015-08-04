@@ -53,7 +53,7 @@ If you want to deploy your modifications on the CTAN by yourself, please take a 
 
 ## Releases
 
-* [v1.1](https://github.com/pidupuis/latex-alert-message/releases/tag/v1.1) [2015-07-04]: Provides TDS archive to facilitate the installation process.
-* [v1.0](https://github.com/pidupuis/latex-alert-message/releases/tag/v1.0) [2015-07-03]: Provides macros for `information`, `warnings`, `errors` or `success` alerts.
+* [v1.1](https://github.com/pidupuis/latex-alert-message/releases/tag/v1.1) [2015-08-04]: Provides TDS archive to facilitate the installation process.
+* [v1.0](https://github.com/pidupuis/latex-alert-message/releases/tag/v1.0) [2015-08-02]: Provides macros for `information`, `warnings`, `errors` or `success` alerts.
 
 
